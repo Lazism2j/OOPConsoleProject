@@ -12,10 +12,16 @@ namespace ConsoleApp1
         private static bool gameOver;  
         private static Dictionary<string, Scene> sceneDic;
         private static Scene nowScene;
+        private static Player player;
+        public static Player Player { get { return player; } }
+        
         // 게임 시작
         public static void Start()
         {
             gameOver = false;
+
+            player = new Player();
+            
             // 씬들을 딕셔너리로 관리
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
@@ -25,6 +31,8 @@ namespace ConsoleApp1
 
 
             nowScene = sceneDic["Title"];
+
+            
         }
 
         public static void ChangeScene(string sceneName)

@@ -12,22 +12,6 @@ namespace ConsoleApp1
         public string[] data;
         public bool[,] map;
 
-        /*public Map(string[] mapData)
-        {
-            this.data = mapData;
-            map = new bool[mapData.Length, mapData[0].Length - 1];
-
-            for (int y = 0; y < mapData.Length; y++)
-            {
-                for (int x = 0; x < mapData[y].Length - 1 ; x++)
-                {
-                    map[y, x] = mapData[y][x] == '#' ? false : true;
-                }
-            }
-            Console.WriteLine("논리형 맵 완성");
-        }*/
-
-
         public void Print()
         {
             Console.SetCursorPosition(0, 0);

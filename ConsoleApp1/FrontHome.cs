@@ -8,6 +8,7 @@ namespace ConsoleApp1
 {
     public class FrontHome : Scene
     {
+       // private ConsoleKe
         public string[] mapData;
         public Map FHMap;
        
@@ -30,6 +31,8 @@ namespace ConsoleApp1
             FHMapBuilder.SetMap(mapData);
             
             FHMap = FHMapBuilder.Build();
+
+            Game.Player.Pos = new Position(4, 6);
         }
 
 
@@ -40,11 +43,12 @@ namespace ConsoleApp1
         public override void Render()
         {
             FHMap.Print();
+            Game.Player.Print();
         }
         // 입력 결과
         public override void Update()
         {
-
+            Game.Player.Move(input);
         }
         // 씬 변경 혹은 게임오버
         public override void Next()
