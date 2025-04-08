@@ -8,7 +8,6 @@ namespace ConsoleApp1
 {
     public class FrontHome : Scene
     {
-       // private ConsoleKe
         public string[] mapData;
         public Map FHMap;
        
@@ -33,6 +32,7 @@ namespace ConsoleApp1
             FHMap = FHMapBuilder.Build();
 
             Game.Player.Pos = new Position(4, 6);
+            Game.Player.map = FHMap.map;
         }
 
 
