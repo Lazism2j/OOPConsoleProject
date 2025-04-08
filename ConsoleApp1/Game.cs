@@ -20,6 +20,9 @@ namespace ConsoleApp1
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("Start", new StartScene());
+            sceneDic.Add("FrontHome", new FrontHome());
+
+
 
             nowScene = sceneDic["Title"];
         }

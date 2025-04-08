@@ -26,7 +26,7 @@ namespace ConsoleApp1
         // 씬 변경 혹은 게임오버
         public override void Next()
         {
-            Game.ChangeScene("Title");
+            Game.ChangeScene("FrontHome");
         }
     }
 }
