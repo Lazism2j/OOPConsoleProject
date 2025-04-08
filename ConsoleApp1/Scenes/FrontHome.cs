@@ -11,6 +11,8 @@ namespace ConsoleApp1
         public string[] mapData;
         public Map FHMap;
        
+        private List<GameObject> gameObjects;
+
         public FrontHome()
         {
             mapData = new string[]
@@ -31,6 +33,9 @@ namespace ConsoleApp1
             
             FHMap = FHMapBuilder.Build();
 
+            gameObjects = new List<GameObject>();
+            gameObjects.Add(new Place("Start", ConsoleColor.Blue, '@', new Position(4, 6)));
+
             Game.Player.Pos = new Position(4, 6);
             Game.Player.map = FHMap.map;
         }
@@ -43,6 +48,10 @@ namespace ConsoleApp1
         public override void Render()
         {
             FHMap.Print();
+            foreach (GameObject obj in gameObjects)
+            {
+                obj.Print();
+            }
             Game.Player.Print();
         }
         // 입력 결과
@@ -53,7 +62,15 @@ namespace ConsoleApp1
         // 씬 변경 혹은 게임오버
         public override void Next()
         {
-            Game.ChangeScene("FrontHome");
+            foreach (GameObject obj in gameObjects)
+            {
+                if (Game.Player.Pos == obj.Pos)
+                {
+                    obj.Interact(Game.Player);
+
+                }
+            }
+            
         }
     }
 }

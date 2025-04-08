@@ -18,5 +18,13 @@ namespace ConsoleApp1
             this.y = y;
         }
 
+        public static bool operator ==(Position a, Position b)
+        {
+            return a.x == b.x && a.y == b.y;
+        }
+        public static bool operator !=(Position a, Position b)
+        {
+            return a.x != b.x || a.y != b.y;
+        }
     }
 }
