@@ -13,6 +13,8 @@ namespace ConsoleApp1
         public int Hp { get { return HP; } set { HP = value; } }
         public int money { get { return Money; }set { Money = value; } }
 
+        public List<Item> Inventory;
+
 
         public Position Pos;
         public Position NextPos;
@@ -26,6 +28,7 @@ namespace ConsoleApp1
 
             Console.SetCursorPosition( 0, map.GetLength(0) + 1);
             Console.WriteLine($"현재 위치 : {Game.nowSceneName} \n체력 : {HP}  남은 돈 : {Money}원");
+            Console.WriteLine("I 를 눌러 인벤토리를 확인");
         }
 
         public void Move(ConsoleKey input)
@@ -49,11 +52,32 @@ namespace ConsoleApp1
                 case ConsoleKey.D:
                     NextPos.x++;
                     break;
+                
             }
             if (map[NextPos.y, NextPos.x] == true)
             {
                 Pos = NextPos;
             }
         }
+
+        public void GetItems(List<Item> basket)
+        {
+            foreach (Item buy in basket) 
+            {
+                foreach(Item have in Inventory)
+                {
+                    if (have.name == buy.name)
+                    {
+                        have.num = have.num + buy.num;
+                    }
+                    else
+                    { 
+                        Inventory.Add(buy);
+                    }
+                }
+            }
+        }
+
+
     }
 }
