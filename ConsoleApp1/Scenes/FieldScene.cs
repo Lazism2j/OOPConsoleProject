@@ -41,5 +41,10 @@ namespace ConsoleApp1.Scenes
             }
 
         }
+
+        public override void Exit()
+        {
+            Game.Player.Hp--;
+        }
     }
 }

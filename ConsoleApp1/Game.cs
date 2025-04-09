@@ -24,7 +24,9 @@ namespace ConsoleApp1
             gameOver = false;
 
             player = new Player();
-            
+            player.Hp = 10;
+            player.money = 10000;
+
             // 씬들을 딕셔너리로 관리
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
