@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ConsoleApp1.Scenes;
 
-namespace ConsoleApp1
+namespace ConsoleApp1.Scenes
 {
-    public class FrontHome : FieldScene
+    public class FrontConvene : FieldScene
     {
-        public FrontHome()
+        public FrontConvene()
         {
-            name = "FrontHome";
+            name = "FrontConven";
 
             mapData = new string[]
             {
                 "##########",
+                "#        #",
+                "#        #",
                 "#        #",
                 "#        #",
                 "#        #",
@@ -28,13 +29,12 @@ namespace ConsoleApp1
 
             MapBuilder FHMapBuilder = new MapBuilder();
             FHMapBuilder.SetMap(mapData);
-            
+
             Map = FHMapBuilder.Build();
 
             gameObjects = new List<GameObject>();
-            gameObjects.Add(new Place("Start", ConsoleColor.Blue, '@', new Position(4, 6)));
-            gameObjects.Add(new Place("PlayGround", ConsoleColor.Blue, '@', new Position(1, 3)));
-            gameObjects.Add(new Place("FrontConven", ConsoleColor.Blue, '@', new Position(8, 2)));
+            gameObjects.Add(new Place("FrontHome", ConsoleColor.Blue, '@', new Position(1, 7)));
+            //gameObjects.Add(new Place("PlayGround", ConsoleColor.Blue, '@', new Position(1, 3)));
 
 
 
@@ -43,17 +43,13 @@ namespace ConsoleApp1
 
         public override void Enter()
         {
-            if(Game.prvSceneName == "Start")
+            if (Game.prvSceneName == "FrontHome")
             {
-                Game.Player.Pos = new Position(4, 6);
+                Game.Player.Pos = new Position(1, 7);
             }
-            else if(Game.prvSceneName == "PlayGround") 
+            else if (Game.prvSceneName == "PlayGround")
             {
                 Game.Player.Pos = new Position(1, 3);
-            }
-            else if (Game.prvSceneName == "FrontConven")
-            {
-                Game.Player.Pos = new Position(8, 2);
             }
             Game.Player.map = Map.map;
         }

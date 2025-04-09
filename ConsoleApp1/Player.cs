@@ -28,7 +28,7 @@ namespace ConsoleApp1
 
             Console.SetCursorPosition( 0, map.GetLength(0) + 1);
             Console.WriteLine($"현재 위치 : {Game.nowSceneName} \n체력 : {HP}  남은 돈 : {Money}원");
-            Console.WriteLine("I 를 눌러 인벤토리를 확인");
+            //Console.WriteLine("I 를 눌러 인벤토리를 확인");
         }
 
         public void Move(ConsoleKey input)
