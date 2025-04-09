@@ -26,10 +26,10 @@ namespace ConsoleApp1
 
             };
 
-            MapBuilder FHMapBuilder = new MapBuilder();
-            FHMapBuilder.SetMap(mapData);
+            MapBuilder mapBuilder = new MapBuilder();
+            mapBuilder.SetMap(mapData);
             
-            Map = FHMapBuilder.Build();
+            Map = mapBuilder.Build();
 
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("Start", ConsoleColor.Blue, '@', new Position(4, 6)));

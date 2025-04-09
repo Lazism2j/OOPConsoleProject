@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ConsoleApp1.Scenes
 {
-    public class FrontConvene : FieldScene
+    class ConvenStore : FieldScene
     {
-        public FrontConvene()
+        public ConvenStore()
         {
-            name = "FrontConven";
+            name = "ConvenStore";
 
             mapData = new string[]
             {
@@ -33,8 +34,8 @@ namespace ConsoleApp1.Scenes
             Map = mapBuilder.Build();
 
             gameObjects = new List<GameObject>();
-            gameObjects.Add(new Place("FrontHome", ConsoleColor.Blue, '@', new Position(1, 7)));
-            gameObjects.Add(new Place("ConvenStore", ConsoleColor.Blue, '@', new Position(8, 4)));
+            gameObjects.Add(new Place("FrontConven", ConsoleColor.Blue, '@', new Position(1, 5)));
+            //gameObjects.Add(new Place("PlayGround", ConsoleColor.Blue, '@', new Position(1, 3)));
 
 
 
@@ -43,14 +44,11 @@ namespace ConsoleApp1.Scenes
 
         public override void Enter()
         {
-            if (Game.prvSceneName == "FrontHome")
+            if (Game.prvSceneName == "FrontConven")
             {
-                Game.Player.Pos = new Position(1, 7);
+                Game.Player.Pos = new Position(1, 5);
             }
-            else if (Game.prvSceneName == "ConvenStore")
-            {
-                Game.Player.Pos = new Position(8, 4);
-            }
+            
             Game.Player.map = Map.map;
         }
     }

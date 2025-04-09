@@ -26,10 +26,10 @@ namespace ConsoleApp1
 
             };
 
-            MapBuilder PGMapBuilder = new MapBuilder();
-            PGMapBuilder.SetMap(mapData);
+            MapBuilder mapBuilder = new MapBuilder();
+            mapBuilder.SetMap(mapData);
 
-            Map = PGMapBuilder.Build();
+            Map = mapBuilder.Build();
 
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("FrontHome", ConsoleColor.Blue, '@', new Position(10, 3)));
