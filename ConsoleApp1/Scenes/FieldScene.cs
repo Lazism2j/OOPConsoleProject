@@ -42,7 +42,8 @@ namespace ConsoleApp1.Scenes
 
         }
 
-        public override void Exit()
+        // 씬 탈출 시 설정
+        public override void Exit() 
         {
             Game.Player.Hp--;
         }

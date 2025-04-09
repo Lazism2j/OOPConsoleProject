@@ -24,8 +24,8 @@ namespace ConsoleApp1
             gameOver = false;
 
             player = new Player();
-            player.Hp = 10;
-            player.money = 10000;
+            Game.Player.Hp = 10;
+            Game.Player.money = 10000;
 
             // 씬들을 딕셔너리로 관리
             sceneDic = new Dictionary<string, Scene>();

@@ -21,7 +21,8 @@ namespace ConsoleApp1
             Console.WriteLine("남은 돈은 용돈으로 사용 가능하다.");
             Console.WriteLine();
 
-            Console.WriteLine("계속하려면 아무키나 누르세요");
+            Console.WriteLine("0. 타이틀로 돌아가기");
+            Console.WriteLine("1. 심부름 출발하기");
         }
         // 입력 결과
         public override void Update()
@@ -31,7 +32,21 @@ namespace ConsoleApp1
         // 씬 변경 혹은 게임오버
         public override void Next()
         {
-            Game.ChangeScene("FrontHome");
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Game.ChangeScene("FrontHome");
+                    break;
+                case ConsoleKey.D0:
+                    Game.ChangeScene("Title");
+                    break;
+                default:
+                    break;
+
+            }
+            
         }
+
+        
     }
 }

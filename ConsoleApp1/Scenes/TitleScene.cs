@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace ConsoleApp1
         public TitleScene()
         {
             name = "Title";
+            
         }
         // 씬 그리기
         public override void Render()
@@ -32,6 +34,12 @@ namespace ConsoleApp1
         public override void Next()
         {
             Game.ChangeScene("Start");
+        }
+
+        public override void Enter()
+        {
+            Game.Player.Hp = 10;
+            Game.Player.money = 10000;
         }
     }
 }
