@@ -31,15 +31,19 @@ namespace ConsoleApp1
             switch (input)
             {
                 case ConsoleKey.UpArrow:
+                case ConsoleKey.W:
                     NextPos.y--;
                     break;
                 case ConsoleKey.DownArrow:
+                case ConsoleKey.S:
                     NextPos.y++;
                     break;
                 case ConsoleKey.LeftArrow:
+                case ConsoleKey.A:
                     NextPos.x--;
                     break;
                 case ConsoleKey.RightArrow:
+                case ConsoleKey.D:
                     NextPos.x++;
                     break;
             }

@@ -27,6 +27,7 @@ namespace ConsoleApp1
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("Start", new StartScene());
             sceneDic.Add("FrontHome", new FrontHome());
+            sceneDic.Add("PlayGround", new PlayGround());
 
 
 

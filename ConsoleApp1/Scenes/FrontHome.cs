@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp1.Scenes;
+//using ConsoleApp1.Scenes;
 
 namespace ConsoleApp1
 {
-    public class FrontHome : Scene
+    public class FrontHome : FieldScene
     {
-        public string[] mapData;
-        public Map FHMap;
+        //public string[] mapData;
+        //public Map Map;
        
-        private List<GameObject> gameObjects;
+        //private List<GameObject> gameObjects;
 
         public FrontHome()
         {
@@ -31,46 +33,16 @@ namespace ConsoleApp1
             MapBuilder FHMapBuilder = new MapBuilder();
             FHMapBuilder.SetMap(mapData);
             
-            FHMap = FHMapBuilder.Build();
+            Map = FHMapBuilder.Build();
 
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("Start", ConsoleColor.Blue, '@', new Position(4, 6)));
+            gameObjects.Add(new Place("PlayGround", ConsoleColor.Blue, '@', new Position(1, 3)));
+
 
             Game.Player.Pos = new Position(4, 6);
-            Game.Player.map = FHMap.map;
+            Game.Player.map = Map.map;
         }
 
-
-
-        
-
-        // 씬 그리기
-        public override void Render()
-        {
-            FHMap.Print();
-            foreach (GameObject obj in gameObjects)
-            {
-                obj.Print();
-            }
-            Game.Player.Print();
-        }
-        // 입력 결과
-        public override void Update()
-        {
-            Game.Player.Move(input);
-        }
-        // 씬 변경 혹은 게임오버
-        public override void Next()
-        {
-            foreach (GameObject obj in gameObjects)
-            {
-                if (Game.Player.Pos == obj.Pos)
-                {
-                    obj.Interact(Game.Player);
-
-                }
-            }
-            
-        }
     }
 }

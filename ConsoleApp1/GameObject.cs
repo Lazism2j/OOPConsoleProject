@@ -8,8 +8,8 @@ namespace ConsoleApp1
 {
     public abstract class GameObject : IInteractable
     {
-        private ConsoleColor Color;
-        private char symbol;
+        private ConsoleColor Color = ConsoleColor.White;
+        private char symbol = '*';
         public Position Pos;
 
         public GameObject(ConsoleColor Color, char symbol, Position Pos)
