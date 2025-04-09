@@ -37,6 +37,7 @@ namespace ConsoleApp1
             sceneDic.Add("PlayGround", new PlayGround());
             sceneDic.Add("FrontConven", new FrontConvene());
             sceneDic.Add("ConvenStore", new ConvenStore());
+            sceneDic.Add("ConvenStand", new ConvenStand());
 
 
 

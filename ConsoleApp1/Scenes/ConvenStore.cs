@@ -36,9 +36,9 @@ namespace ConsoleApp1.Scenes
 
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("FrontConven", ConsoleColor.Blue, '@', new Position(1, 5)));
-            //gameObjects.Add(new Place("PlayGround", ConsoleColor.Blue, '@', new Position(1, 3)));
+            gameObjects.Add(new Place("ConvenStand", ConsoleColor.DarkCyan, '@', new Position(3, 8)));
 
-
+            Game.Player.basket = new Inventory();
 
         }
 

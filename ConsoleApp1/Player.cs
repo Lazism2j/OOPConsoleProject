@@ -13,7 +13,8 @@ namespace ConsoleApp1
         public int Hp { get { return HP; } set { HP = value; } }
         public int money { get { return Money; }set { Money = value; } }
 
-        public List<Item> Inventory;
+        public Inventory bag;
+        public Inventory basket;
 
 
         public Position Pos;
@@ -63,20 +64,15 @@ namespace ConsoleApp1
             }
         }
 
-        public void GetItems(List<Item> basket)
+        public void BuyItems(Inventory basket)
         {
-            foreach (Item buy in basket) 
+            foreach (Item buy in basket.inventory) 
             {
-                foreach(Item have in Inventory)
+                foreach(Item have in bag.inventory)
                 {
-                    if (have.name == buy.name)
-                    {
-                        have.num = have.num + buy.num;
-                    }
-                    else
-                    { 
-                        Inventory.Add(buy);
-                    }
+                    
+                    bag.AddItem(buy);
+                    
                 }
             }
         }
