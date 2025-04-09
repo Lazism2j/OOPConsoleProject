@@ -22,7 +22,7 @@ namespace ConsoleApp1
             Console.ResetColor();
 
             Console.SetCursorPosition( 0, map.GetLength(0) + 1);
-            Console.WriteLine($"체력 : {HP}  남은 돈 : {Money}");
+            Console.WriteLine($"현재 위치 : {Game.nowSceneName} \n체력 : {HP}  남은 돈 : {Money}");
         }
 
         public void Move(ConsoleKey input)

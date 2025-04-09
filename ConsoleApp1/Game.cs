@@ -12,6 +12,7 @@ namespace ConsoleApp1
         private static bool gameOver;  
         private static Dictionary<string, Scene> sceneDic;
         private static Scene nowScene;
+        public static string nowSceneName;
         public static string prvSceneName;
 
         private static Player player;
@@ -44,7 +45,7 @@ namespace ConsoleApp1
 
             nowScene.Exit();
             nowScene = sceneDic[sceneName];
-            
+            nowSceneName = nowScene.name;
             nowScene.Enter();
         }
         // 게임 진행
