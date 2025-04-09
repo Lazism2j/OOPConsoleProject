@@ -13,8 +13,9 @@ namespace ConsoleApp1
         private static bool gameOver;  
         private static Dictionary<string, Scene> sceneDic;
         private static Scene nowScene;
+        public static Scene prvScene; 
         public static string nowSceneName;
-        public static string prvSceneName;
+        
 
         private static Player player;
         public static Player Player { get { return player; } }
@@ -46,8 +47,8 @@ namespace ConsoleApp1
 
         public static void ChangeScene(string sceneName)
         {
-            prvSceneName = nowScene.name;
-
+            
+            prvScene = nowScene;
             nowScene.Exit();
             nowScene = sceneDic[sceneName];
             nowSceneName = nowScene.name;

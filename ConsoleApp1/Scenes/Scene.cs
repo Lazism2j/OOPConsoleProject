@@ -9,6 +9,7 @@ namespace ConsoleApp1
     public abstract class Scene
     {
         public string name;
+        public bool field = true;
         // 씬 그리기
         public abstract void Render();
         // 입력 받기

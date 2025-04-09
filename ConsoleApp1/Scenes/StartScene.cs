@@ -8,10 +8,11 @@ namespace ConsoleApp1
 {
     public class StartScene : Scene
     {
-
+        
         public StartScene() 
         {
             name = "Start";
+            field = false;
         }
         // 씬 그리기
         public override void Render()
@@ -47,6 +48,7 @@ namespace ConsoleApp1
             
         }
 
-        
+       
+
     }
 }

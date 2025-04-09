@@ -28,6 +28,8 @@ namespace ConsoleApp1
 
             Console.SetCursorPosition( 0, map.GetLength(0) + 1);
             Console.WriteLine($"현재 위치 : {Game.nowSceneName} \n체력 : {HP}  남은 돈 : {Money}원");
+            Console.WriteLine(Game.prvScene.field);
+            Console.WriteLine(Game.prvScene.name);
             //Console.WriteLine("I 를 눌러 인벤토리를 확인");
         }
 
@@ -52,7 +54,8 @@ namespace ConsoleApp1
                 case ConsoleKey.D:
                     NextPos.x++;
                     break;
-                
+                default:
+                    break;
             }
             if (map[NextPos.y, NextPos.x] == true)
             {

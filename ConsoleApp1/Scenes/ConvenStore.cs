@@ -9,10 +9,11 @@ namespace ConsoleApp1.Scenes
 {
     class ConvenStore : FieldScene
     {
+        
         public ConvenStore()
         {
             name = "ConvenStore";
-
+            field = true;
             mapData = new string[]
             {
                 "##########",
@@ -44,12 +45,18 @@ namespace ConsoleApp1.Scenes
 
         public override void Enter()
         {
-            if (Game.prvSceneName == "FrontConven")
+            if (Game.prvScene.name == "FrontConven")
             {
                 Game.Player.Pos = new Position(1, 5);
             }
             
             Game.Player.map = Map.map;
+
+            // 이전 씬도 필드 이면 플레이어 체력 감소
+            if (Game.prvScene.field)
+            {
+                Game.Player.Hp--;
+            }
         }
     }
 }

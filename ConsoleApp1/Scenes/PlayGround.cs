@@ -13,6 +13,7 @@ namespace ConsoleApp1
         public PlayGround()
         {
             name = "PlayGround";
+            field = true;
             mapData = new string[]
             {
                 "############",
@@ -34,22 +35,28 @@ namespace ConsoleApp1
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("FrontHome", ConsoleColor.Blue, '@', new Position(10, 3)));
 
-            
+
         }
 
         public override void Enter()
         {
-            if (Game.prvSceneName == "FrontHome")
+            if (Game.prvScene.name == "FrontHome")
             {
                 Game.Player.Pos = new Position(10, 3);
+
+                Game.Player.map = Map.map;
+
+                
             }
-            
-            Game.Player.map = Map.map;
+
+            // 이전 씬도 필드 이면 플레이어 체력 감소
+            if (Game.prvScene.field)
+            {
+                Game.Player.Hp--;
+            }
+
+
         }
-
-
-
-
     }
 }
 

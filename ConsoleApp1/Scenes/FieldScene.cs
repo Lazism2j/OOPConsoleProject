@@ -10,7 +10,7 @@ namespace ConsoleApp1.Scenes
     {
         protected string[] mapData;
         protected Map Map;
-
+        public bool field = true;
         protected List<GameObject> gameObjects;
 
         // 씬 그리기
@@ -42,10 +42,6 @@ namespace ConsoleApp1.Scenes
 
         }
 
-        // 씬 탈출 시 설정
-        public override void Exit() 
-        {
-            Game.Player.Hp--;
-        }
+        
     }
 }

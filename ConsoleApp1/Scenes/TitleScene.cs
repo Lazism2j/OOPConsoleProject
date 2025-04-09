@@ -9,17 +9,18 @@ namespace ConsoleApp1
 {
     class TitleScene : Scene
     {
+        
         public TitleScene()
         {
             name = "Title";
-            
+            field = true;
         }
         // 씬 그리기
         public override void Render()
         {
             Console.WriteLine("┌-------------------┐");
-            Console.WriteLine("┃    7살 서율이의   ┃");
-            Console.WriteLine("┃   심부름 도전기   ┃");
+            Console.WriteLine("│    7살 서율이의   │");
+            Console.WriteLine("│   심부름 도전기   │");
             Console.WriteLine("└-------------------┘");
             Console.WriteLine();
 

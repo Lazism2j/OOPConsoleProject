@@ -8,10 +8,11 @@ namespace ConsoleApp1.Scenes
 {
     public class FrontConvene : FieldScene
     {
+        
         public FrontConvene()
         {
             name = "FrontConven";
-
+            field = true;
             mapData = new string[]
             {
                 "##########",
@@ -43,15 +44,21 @@ namespace ConsoleApp1.Scenes
 
         public override void Enter()
         {
-            if (Game.prvSceneName == "FrontHome")
+            if (Game.prvScene.name == "FrontHome")
             {
                 Game.Player.Pos = new Position(1, 7);
             }
-            else if (Game.prvSceneName == "ConvenStore")
+            else if (Game.prvScene.name == "ConvenStore")
             {
                 Game.Player.Pos = new Position(8, 4);
             }
             Game.Player.map = Map.map;
+
+            // 이전 씬도 필드 이면 플레이어 체력 감소
+            if (Game.prvScene.field)
+            {
+                Game.Player.Hp--;
+            }
         }
     }
 }
