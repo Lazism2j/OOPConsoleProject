@@ -8,6 +8,10 @@ namespace ConsoleApp1
 {
     class TitleScene : Scene
     {
+        public TitleScene()
+        {
+            name = "Title";
+        }
         // 씬 그리기
         public override void Render()
         {

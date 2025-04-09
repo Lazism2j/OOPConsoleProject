@@ -12,6 +12,7 @@ namespace ConsoleApp1
         
         public PlayGround()
         {
+            name = "PlayGround";
             mapData = new string[]
             {
                 "############",
@@ -33,15 +34,22 @@ namespace ConsoleApp1
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("FrontHome", ConsoleColor.Blue, '@', new Position(10, 3)));
 
-            Game.Player.Pos = new Position(4, 6);
+            
+        }
+
+        public override void Enter()
+        {
+            if (Game.prvSceneName == "FrontHome")
+            {
+                Game.Player.Pos = new Position(10, 3);
+            }
+            
             Game.Player.map = Map.map;
         }
 
 
 
 
-
-        
     }
 }
 
