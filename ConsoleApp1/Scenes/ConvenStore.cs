@@ -9,7 +9,7 @@ namespace ConsoleApp1.Scenes
 {
     class ConvenStore : FieldScene
     {
-        
+
         public ConvenStore()
         {
             name = "ConvenStore";
@@ -36,9 +36,9 @@ namespace ConsoleApp1.Scenes
 
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("FrontConven", ConsoleColor.Blue, '@', new Position(1, 5)));
-            gameObjects.Add(new Place("ConvenStand", ConsoleColor.DarkCyan, '@', new Position(8, 3)));
+            gameObjects.Add(new Place("ConvenStand", ConsoleColor.Yellow, '▼', new Position(8, 3)));
 
-            
+
 
         }
 
@@ -49,7 +49,7 @@ namespace ConsoleApp1.Scenes
             {
                 Game.Player.Pos = new Position(1, 5);
             }
-            
+
             Game.Player.map = Map.map;
 
             // 이전 씬도 필드 이면 플레이어 체력 감소
@@ -59,19 +59,27 @@ namespace ConsoleApp1.Scenes
             }
         }
 
-        public override void Exit()
+        public override void Exit(bool IsField)
         {
-            int convenPrice;
-            Game.Player.basket.AllPrice(out convenPrice);
-            
-            if ( convenPrice <= Game.Player.money)
-            {
-                Game.Player.money -= convenPrice;
+            if (IsField)
+            { 
+                int convenPrice;
+                Game.Player.basket.AllPrice(out convenPrice);
 
-                Game.Player.BuyItems(Game.Player.basket);
+                if (convenPrice <= Game.Player.money)
+                {
+                    Game.Player.money -= convenPrice;
 
+                    Game.Player.BuyItems(Game.Player.basket);
+
+                }
+                else
+                {
+                    //Console.SetCursorPosition(20, 0);
+                    //Console.WriteLine("돈이 부족하여 결 제하지 못했습니다.");
+
+                }
                 Game.Player.basket.inventory.Clear();
-                
             }
         }
     }

@@ -33,8 +33,9 @@ namespace ConsoleApp1.Scenes
 
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("FrontMart", ConsoleColor.Blue, '@', new Position(1, 4)));
-            //gameObjects.Add(new Place("Mart", ConsoleColor.Blue, '@', new Position(11, 2)));
-
+            gameObjects.Add(new Place("MeatAndFish", ConsoleColor.Yellow, '▼', new Position(6, 1)));
+            gameObjects.Add(new Place("Vegetable", ConsoleColor.Yellow, '▼', new Position(3, 7)));
+            gameObjects.Add(new Place("Refrigerator", ConsoleColor.Yellow, '▼', new Position(11, 5)));
 
 
         }
@@ -53,6 +54,29 @@ namespace ConsoleApp1.Scenes
             if (Game.prvScene.field)
             {
                 Game.Player.Hp--;
+            }
+        }
+
+        public override void Exit(bool IsField)
+        {
+            if (IsField)
+            { 
+                int convenPrice;
+                Game.Player.basket.AllPrice(out convenPrice);
+
+                if (convenPrice <= Game.Player.money)
+                {
+                    Game.Player.money -= convenPrice;
+
+                    Game.Player.BuyItems(Game.Player.basket);
+
+                }
+                else
+                {
+                    // Console.WriteLine("돈이 부족하여 결제하지 못했습니다.");
+
+                }
+                Game.Player.basket.inventory.Clear();
             }
         }
     }

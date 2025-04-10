@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         private string scene;
         public Place(string scene, ConsoleColor Color, char symbol, Position position)
-            : base(ConsoleColor.Blue, '@', position)
+            : base(Color, symbol, position)
         {
             this.scene = scene;
         }
