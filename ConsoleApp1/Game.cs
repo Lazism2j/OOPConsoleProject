@@ -15,8 +15,8 @@ namespace ConsoleApp1
         private static Scene nowScene;
         public static Scene prvScene; 
         public static string nowSceneName;
-        
 
+       
         private static Player player;
         public static Player Player { get { return player; } }
         
@@ -28,7 +28,7 @@ namespace ConsoleApp1
             player = new Player();
             Game.Player.Hp = 10;
             Game.Player.money = 10000;
-
+            
             // 씬들을 딕셔너리로 관리
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
@@ -39,11 +39,9 @@ namespace ConsoleApp1
             sceneDic.Add("ConvenStore", new ConvenStore());
             sceneDic.Add("ConvenStand", new ConvenStand());
 
-
-
             nowScene = sceneDic["Title"];
 
-            
+          
         }
 
         public static void ChangeScene(string sceneName)

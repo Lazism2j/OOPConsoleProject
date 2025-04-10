@@ -16,6 +16,7 @@ namespace ConsoleApp1
         public Inventory bag;
         public Inventory basket;
 
+        
 
         public Position Pos;
         public Position NextPos;

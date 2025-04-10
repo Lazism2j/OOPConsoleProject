@@ -17,17 +17,29 @@ namespace ConsoleApp1
 
         public void AddItem(Item newItem)
         {
-
-            foreach (Item have in inventory)
+            if (inventory.Count > 0) 
             {
-                if (have.name == newItem.name)
+                for(int i = 0; i < inventory.Count; i++)
                 {
-                    have.num = have.num + newItem.num;
+                    if (inventory[i].name == newItem.name)
+                    {
+                        
+                        inventory[i].num = inventory[i].num + newItem.num;
+                        break;
+                    }
+                    
+                    if (i == inventory.Count - 1 )
+                    {
+                        inventory.Add(newItem);
+                        break;
+                    }
+                    
                 }
-                else
-                {
-                    inventory.Add(newItem);
-                }
+                
+            }
+            else
+            {
+                inventory.Add(newItem);
             }
 
         }

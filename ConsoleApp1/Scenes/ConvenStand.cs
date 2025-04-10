@@ -21,9 +21,9 @@ namespace ConsoleApp1.Scenes
             Console.WriteLine();
 
             Console.WriteLine("0. 돌아가기");
-            Console.WriteLine("1. 과자");
-            Console.WriteLine("2. 음료수");
-            Console.WriteLine("3. 두부");
+            Console.WriteLine($"1. 과자 : {new Snack().price}원");
+            Console.WriteLine($"2. 음료수 : {new Drink().price}원");
+            Console.WriteLine($"3. 두부 : {new Tofu().price}원");
             
             Console.SetCursorPosition(0, 8);
             
