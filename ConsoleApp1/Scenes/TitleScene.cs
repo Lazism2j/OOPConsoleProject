@@ -18,10 +18,10 @@ namespace ConsoleApp1
         // 씬 그리기
         public override void Render()
         {
-            Console.WriteLine("┌-------------------┐");
+            Console.WriteLine("┌───────────────────┐");
             Console.WriteLine("│    7살 서율이의   │");
             Console.WriteLine("│   심부름 도전기   │");
-            Console.WriteLine("└-------------------┘");
+            Console.WriteLine("└───────────────────┘");
             Console.WriteLine();
 
             Console.WriteLine("계속하려면 아무키나 누르세요");
@@ -31,7 +31,7 @@ namespace ConsoleApp1
         {
 
         }
-        // 씬 변경 혹은 게임오버
+        // 씬 변경
         public override void Next()
         {
             Game.ChangeScene("Start");

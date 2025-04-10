@@ -28,7 +28,7 @@ namespace ConsoleApp1.Scenes
         {
             Game.Player.Adtion(input);
         }
-        // 씬 변경 혹은 게임오버
+        // 씬 변경
         public override void Next()
         {
             foreach (GameObject obj in gameObjects)
@@ -41,7 +41,8 @@ namespace ConsoleApp1.Scenes
             }
 
         }
-
+        // FieldScene 사이를 움직일 때 체력 감소
+        // 체력이 0이 되면 GameOver
         public override void Exit(bool IsField)
         {
             if (IsField)

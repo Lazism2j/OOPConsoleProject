@@ -24,12 +24,13 @@ namespace ConsoleApp1
         public static void Start()
         {
             gameOver = false;
-
+            // 플레이어 설정
             player = new Player();
             Player.Hp = 10;
             Player.money = 10000;
             Player.bag = new Inventory();
             Player.basket = new Inventory();
+
             // 씬들을 딕셔너리로 관리
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
@@ -81,6 +82,7 @@ namespace ConsoleApp1
         // 게임 종료
         public static void End()
         {
+            // 체력으로 Clear와 GameOver 구분
             if (player.Hp == 0)
             {
                 Console.Clear();

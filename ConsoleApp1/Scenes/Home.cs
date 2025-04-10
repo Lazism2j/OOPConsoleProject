@@ -23,6 +23,8 @@ namespace ConsoleApp1.Scenes
             Console.WriteLine("1. 가방을 보여준다.");
         }
         // 입력 결과
+
+        // 주어진 아이템을 모두 구매해 집에 도착하면 Clear!!
         public override void Update()
         {
             switch (input) 
@@ -36,11 +38,7 @@ namespace ConsoleApp1.Scenes
                     {    
                         Game.gameOver = true;
                     }
-                    else
-                    {
-                        Console.WriteLine("물건이 부족합니다.");
-                        Console.WriteLine("계속하려면 아무키나 누르세요.");
-                    }
+                    
 
                     break;  
                 default:
@@ -48,7 +46,7 @@ namespace ConsoleApp1.Scenes
             }
             
         }
-        // 씬 변경 혹은 게임오버
+        // 씬 변경
         public override void Next()
         {
             

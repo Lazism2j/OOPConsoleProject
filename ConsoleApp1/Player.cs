@@ -86,6 +86,8 @@ namespace ConsoleApp1
             }
         }
 
+
+        // Player의 바구니에서 가방으로 옮기는 작업
         public void BuyItems(Inventory basket)
         {
             for (int i = 0; i < basket.inventory.Count; i++) 

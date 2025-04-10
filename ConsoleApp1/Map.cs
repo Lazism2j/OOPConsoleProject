@@ -35,7 +35,7 @@ namespace ConsoleApp1
 
 
     }
-
+    // 빌더를 통해 string배열을 받아 맵 그리기
     public class MapBuilder
     {
         public string[] data;

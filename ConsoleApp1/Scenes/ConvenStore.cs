@@ -56,7 +56,8 @@ namespace ConsoleApp1.Scenes
         }
 
         public override void Exit(bool IsField)
-        {
+        {   // 매장을 나갈 때 바구니의 물건을 가방으로 옮기고
+            // 그 값 만큼 돈을 차감
             if (IsField)
             { 
                 int convenPrice;
@@ -69,14 +70,10 @@ namespace ConsoleApp1.Scenes
                     Game.Player.BuyItems(Game.Player.basket);
 
                 }
-                else
-                {
-                    //Console.SetCursorPosition(20, 0);
-                    //Console.WriteLine("돈이 부족하여 결 제하지 못했습니다.");
-
-                }
+                
                 Game.Player.basket.inventory.Clear();
 
+                // FieldScene 사이를 움직일 때 체력 감소
                 if (IsField)
                 {
                     Game.Player.Hp--;

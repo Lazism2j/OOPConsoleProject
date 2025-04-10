@@ -43,7 +43,7 @@ namespace ConsoleApp1.Scenes
 
             }
         }
-        // 씬 변경 혹은 게임오버
+        // 씬 변경
         public override void Next()
         {
             switch (input)
