@@ -44,6 +44,7 @@ namespace ConsoleApp1
             sceneDic.Add("MeatAndFish", new MeatAndFish());
             sceneDic.Add("Refrigerator", new Refrigerator());
             sceneDic.Add("Vegetable", new Vegetable());
+            sceneDic.Add("Home", new Home());
 
 
 
@@ -80,7 +81,7 @@ namespace ConsoleApp1
         // 게임 종료
         public static void End()
         {
-            if (player.Hp ==0)
+            if (player.Hp == 0)
             {
                 Console.Clear();
                 Console.WriteLine("너무 오래 돌아다녀 그만 지쳐버렸다.");

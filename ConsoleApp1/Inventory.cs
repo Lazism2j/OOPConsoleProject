@@ -88,7 +88,20 @@ namespace ConsoleApp1
 
        
 
-        
+        public bool Find(string product)
+        {
+            bool found = false;
+            foreach (Item item in inventory)
+            {
+                found = item.name == product;
+                if (found) 
+                {
+                    break;
+                }
+                
+            }
+            return found;
+        }
 
             
         
