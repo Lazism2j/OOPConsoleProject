@@ -15,7 +15,7 @@ namespace ConsoleApp1
         private static Scene nowScene;
         public static Scene prvScene; 
         public static string nowSceneName;
-
+        public static bool IsField;
        
         private static Player player;
         public static Player Player { get { return player; } }
@@ -41,7 +41,11 @@ namespace ConsoleApp1
             sceneDic.Add("ConvenStand", new ConvenStand());
             sceneDic.Add("FrontMart", new FrontMart());
             sceneDic.Add("Mart", new Mart());
-            
+            sceneDic.Add("MeatAndFish", new MeatAndFish());
+            sceneDic.Add("Refrigerator", new Refrigerator());
+            sceneDic.Add("Vegetable", new Vegetable());
+
+
 
             nowScene = sceneDic["Title"];
 
@@ -52,7 +56,8 @@ namespace ConsoleApp1
         {
             
             prvScene = nowScene;
-            nowScene.Exit();
+            IsField = sceneDic[sceneName].field;
+            nowScene.Exit(IsField);
             nowScene = sceneDic[sceneName];
             nowSceneName = nowScene.name;
             nowScene.Enter();

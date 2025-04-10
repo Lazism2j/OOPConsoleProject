@@ -26,6 +26,6 @@ namespace ConsoleApp1
         // 씬 진입 시 설정
         public virtual void Enter() { }
         // 씬 탈출 시 설정
-        public virtual void Exit() { }
+        public virtual void Exit(bool IsField) { }
     }
 }
