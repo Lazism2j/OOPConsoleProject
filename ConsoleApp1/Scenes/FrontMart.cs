@@ -50,11 +50,7 @@ namespace ConsoleApp1.Scenes
             }
             Game.Player.map = Map.map;
 
-            // 이전 씬도 필드 이면 플레이어 체력 감소
-            if (Game.prvScene.field)
-            {
-                Game.Player.Hp--;
-            }
+            
         }
     }
 }

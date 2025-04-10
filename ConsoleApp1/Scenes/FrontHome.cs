@@ -9,7 +9,7 @@ namespace ConsoleApp1
 {
     public class FrontHome : FieldScene
     {
-        
+
         public FrontHome()
         {
             name = "FrontHome";
@@ -30,7 +30,7 @@ namespace ConsoleApp1
 
             MapBuilder mapBuilder = new MapBuilder();
             mapBuilder.SetMap(mapData);
-            
+
             Map = mapBuilder.Build();
 
             gameObjects = new List<GameObject>();
@@ -45,11 +45,11 @@ namespace ConsoleApp1
 
         public override void Enter()
         {
-            if(Game.prvScene.name == "Start")
+            if (Game.prvScene.name == "Start")
             {
                 Game.Player.Pos = new Position(4, 6);
             }
-            else if(Game.prvScene.name == "PlayGround") 
+            else if (Game.prvScene.name == "PlayGround")
             {
                 Game.Player.Pos = new Position(1, 3);
             }
@@ -59,11 +59,7 @@ namespace ConsoleApp1
             }
             Game.Player.map = Map.map;
 
-            // 이전 씬도 필드 이면 플레이어 체력 감소
-            if (Game.prvScene.field)
-            {
-                Game.Player.Hp--;
-            }
+
         }
     }
 }

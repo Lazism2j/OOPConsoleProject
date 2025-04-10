@@ -42,6 +42,20 @@ namespace ConsoleApp1.Scenes
 
         }
 
-        
+        public override void Exit(bool IsField)
+        {
+            if (IsField)
+            {
+                Game.Player.Hp--;
+            }
+
+            if (Game.Player.Hp == 0)
+            {
+                Game.gameOver = true;
+            }
+            
+        }
+
+
     }
 }
