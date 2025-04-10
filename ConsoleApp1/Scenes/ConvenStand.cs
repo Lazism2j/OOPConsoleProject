@@ -26,7 +26,7 @@ namespace ConsoleApp1.Scenes
             Console.WriteLine($"3. 두부 : {new Tofu().price}원");
             
             Console.SetCursorPosition(0, 8);
-            
+            Console.WriteLine("바구니안의 물건");
             Game.Player.basket.Print();
         }
         // 입력 결과

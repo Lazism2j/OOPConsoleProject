@@ -29,7 +29,7 @@ namespace ConsoleApp1
             Player.Hp = 10;
             Player.money = 10000;
             Player.bag = new Inventory();
-
+            Player.basket = new Inventory();
             // 씬들을 딕셔너리로 관리
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
@@ -39,6 +39,7 @@ namespace ConsoleApp1
             sceneDic.Add("FrontConven", new FrontConvene());
             sceneDic.Add("ConvenStore", new ConvenStore());
             sceneDic.Add("ConvenStand", new ConvenStand());
+            
 
             nowScene = sceneDic["Title"];
 

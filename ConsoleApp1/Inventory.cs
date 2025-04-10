@@ -9,6 +9,8 @@ namespace ConsoleApp1
     public class Inventory
     {
         public List<Item> inventory;
+        
+        public Stack<string> stack;
 
         public Inventory()
         {
@@ -59,12 +61,15 @@ namespace ConsoleApp1
 
         }
 
+        
         public void Print()
         {
-            Console.WriteLine("바구니안의 물건");
-            for (int i = 0; i < inventory.Count; i++)
+            if (inventory.Count > 0)
             {
-                Console.WriteLine($"{i + 1}. {inventory[i].name} {inventory[i].num}개");
+                for (int i = 0; i < inventory.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {inventory[i].name} {inventory[i].num}개");
+                }
             }
 
         }
@@ -80,5 +85,12 @@ namespace ConsoleApp1
 
             return allPrice;
         }
+
+       
+
+        
+
+            
+        
     }
 }

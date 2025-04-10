@@ -38,7 +38,7 @@ namespace ConsoleApp1.Scenes
             gameObjects.Add(new Place("FrontConven", ConsoleColor.Blue, '@', new Position(1, 5)));
             gameObjects.Add(new Place("ConvenStand", ConsoleColor.DarkCyan, '@', new Position(3, 8)));
 
-            Game.Player.basket = new Inventory();
+            
 
         }
 
@@ -69,6 +69,8 @@ namespace ConsoleApp1.Scenes
                 Game.Player.money -= convenPrice;
 
                 Game.Player.BuyItems(Game.Player.basket);
+
+                Game.Player.basket.inventory.Clear();
                 
             }
         }

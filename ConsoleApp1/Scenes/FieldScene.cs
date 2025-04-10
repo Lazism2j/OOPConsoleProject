@@ -26,7 +26,7 @@ namespace ConsoleApp1.Scenes
         // 입력 결과
         public override void Update()
         {
-            Game.Player.Move(input);
+            Game.Player.Adtion(input);
         }
         // 씬 변경 혹은 게임오버
         public override void Next()
