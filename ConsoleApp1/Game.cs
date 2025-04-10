@@ -10,7 +10,7 @@ namespace ConsoleApp1
     public static class Game
     {
         // 초기정보
-        private static bool gameOver;  
+        public static bool gameOver;  
         private static Dictionary<string, Scene> sceneDic;
         private static Scene nowScene;
         public static Scene prvScene; 
@@ -80,7 +80,16 @@ namespace ConsoleApp1
         // 게임 종료
         public static void End()
         {
-
+            if (player.Hp ==0)
+            {
+                Console.Clear();
+                Console.WriteLine("너무 오래 돌아다녀 그만 지쳐버렸다.");
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("성공적으로 심부름을 해냈다!!");
+            }
         }
     }
 }
