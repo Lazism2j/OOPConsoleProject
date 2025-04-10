@@ -36,7 +36,7 @@ namespace ConsoleApp1.Scenes
 
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("FrontConven", ConsoleColor.Blue, '@', new Position(1, 5)));
-            gameObjects.Add(new Place("ConvenStand", ConsoleColor.DarkCyan, '@', new Position(3, 8)));
+            gameObjects.Add(new Place("ConvenStand", ConsoleColor.DarkCyan, '@', new Position(8, 3)));
 
             
 

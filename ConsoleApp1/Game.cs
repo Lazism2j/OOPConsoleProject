@@ -39,6 +39,8 @@ namespace ConsoleApp1
             sceneDic.Add("FrontConven", new FrontConvene());
             sceneDic.Add("ConvenStore", new ConvenStore());
             sceneDic.Add("ConvenStand", new ConvenStand());
+            sceneDic.Add("FrontMart", new FrontMart());
+            sceneDic.Add("Mart", new Mart());
             
 
             nowScene = sceneDic["Title"];

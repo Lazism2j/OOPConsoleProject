@@ -36,6 +36,7 @@ namespace ConsoleApp1.Scenes
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("FrontHome", ConsoleColor.Blue, '@', new Position(1, 7)));
             gameObjects.Add(new Place("ConvenStore", ConsoleColor.Blue, '@', new Position(8, 4)));
+            gameObjects.Add(new Place("FrontMart", ConsoleColor.Blue, '@', new Position(4, 1)));
 
 
 
@@ -51,6 +52,10 @@ namespace ConsoleApp1.Scenes
             else if (Game.prvScene.name == "ConvenStore")
             {
                 Game.Player.Pos = new Position(8, 4);
+            }
+            else if (Game.prvScene.name == "FrontMart")
+            {
+                Game.Player.Pos = new Position(4, 1);
             }
             Game.Player.map = Map.map;
 
