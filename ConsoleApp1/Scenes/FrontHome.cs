@@ -34,7 +34,7 @@ namespace ConsoleApp1
             Map = mapBuilder.Build();
 
             gameObjects = new List<GameObject>();
-            gameObjects.Add(new Place("Start", ConsoleColor.Blue, '@', new Position(4, 6)));
+            gameObjects.Add(new Place("Home", ConsoleColor.Blue, '@', new Position(4, 6)));
             gameObjects.Add(new Place("PlayGround", ConsoleColor.Blue, '@', new Position(1, 3)));
             gameObjects.Add(new Place("FrontConven", ConsoleColor.Blue, '@', new Position(8, 2)));
 
@@ -49,6 +49,10 @@ namespace ConsoleApp1
             {
                 Game.Player.Pos = new Position(4, 6);
             }
+            else if (Game.prvScene.name == "Home")
+            {
+                Game.Player.Pos = new Position(4, 6);
+            }
             else if (Game.prvScene.name == "PlayGround")
             {
                 Game.Player.Pos = new Position(1, 3);
@@ -57,6 +61,7 @@ namespace ConsoleApp1
             {
                 Game.Player.Pos = new Position(8, 2);
             }
+
             Game.Player.map = Map.map;
 
 
