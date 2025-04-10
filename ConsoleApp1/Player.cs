@@ -67,14 +67,9 @@ namespace ConsoleApp1
 
         public void BuyItems(Inventory basket)
         {
-            foreach (Item buy in basket.inventory) 
+            for (int i = 0; i < basket.inventory.Count; i++) 
             {
-                foreach(Item have in bag.inventory)
-                {
-                    
-                    bag.AddItem(buy);
-                    
-                }
+                bag.AddItem(basket.inventory[i]);           
             }
         }
 

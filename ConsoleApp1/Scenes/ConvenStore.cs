@@ -58,5 +58,19 @@ namespace ConsoleApp1.Scenes
                 Game.Player.Hp--;
             }
         }
+
+        public override void Exit()
+        {
+            int convenPrice;
+            Game.Player.basket.AllPrice(out convenPrice);
+            
+            if ( convenPrice <= Game.Player.money)
+            {
+                Game.Player.money -= convenPrice;
+
+                Game.Player.BuyItems(Game.Player.basket);
+                
+            }
+        }
     }
 }

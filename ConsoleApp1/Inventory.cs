@@ -23,7 +23,6 @@ namespace ConsoleApp1
                 {
                     if (inventory[i].name == newItem.name)
                     {
-                        
                         inventory[i].num = inventory[i].num + newItem.num;
                         break;
                     }
@@ -33,16 +32,14 @@ namespace ConsoleApp1
                         inventory.Add(newItem);
                         break;
                     }
-                    
                 }
-                
             }
             else
             {
                 inventory.Add(newItem);
             }
-
         }
+
         public void RemoveItem(Item item)
         {
 
@@ -70,6 +67,18 @@ namespace ConsoleApp1
                 Console.WriteLine($"{i + 1}. {inventory[i].name} {inventory[i].num}개");
             }
 
+        }
+
+        public int AllPrice(out int allPrice)
+        {
+            allPrice = 0;
+            foreach (Item item in inventory)
+            {
+                allPrice += item.price * item.num;
+            }
+
+
+            return allPrice;
         }
     }
 }
